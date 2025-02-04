@@ -1,72 +1,75 @@
-Simple Java Socket Chat Application
-This is a basic client-server chat application implemented in Java using sockets. The client connects to the server, allowing bidirectional communication between them.
+# SecondHand
 
-Features
-The server listens for a connection from the client.
-The client connects to the server using a socket.
-Both client and server can send and receive messages.
-The conversation continues until either party sends exit, which closes the connection.
-Requirements
-Java Development Kit (JDK) 8 or later
-How to Run
-Step 1: Compile the Java files
-sh
-Kopyala
-Düzenle
-javac Server.java Client.java
-Step 2: Start the Server
-Run the server first so it can listen for incoming connections.
+SecondHand is a web application designed to facilitate the buying and selling of second-hand items. Users can list their products, browse available listings, and communicate with sellers to complete transactions.
 
-sh
-Kopyala
-Düzenle
-java Server
-Step 3: Start the Client
-In a separate terminal or command prompt, start the client.
+## Features
+- User authentication and authorization
+- Listing second-hand products with images and descriptions
+- Browsing and searching for items
+- Contacting sellers via messages
+- Responsive UI for a seamless experience on different devices
 
-sh
-Kopyala
-Düzenle
-java Client
-Step 4: Chat
-Type messages in the client and press Enter to send them to the server.
-The server can reply by typing messages and pressing Enter.
-To exit, type exit and press Enter.
-Code Overview
-Server.java
-Starts a ServerSocket on port 12345.
-Waits for a client to connect.
-Reads messages from the client and sends responses.
-Client.java
-Connects to the server on localhost:12345.
-Sends user input to the server and prints the response.
-Example Interaction
-Client:
+## Technologies Used
+- **Frontend:** Angular, TypeScript, HTML, CSS
+- **Backend:** Java Spring Boot, MySQL
+- **Authentication:** JWT (JSON Web Token)
+- **API Testing:** Postman, Swagger
+- **Containerization:** Docker
 
-vbnet
-Kopyala
-Düzenle
-Client: Hello, Server!
-Server: Hi, Client!
-Client: How are you?
-Server: I'm good, thanks!
-Client: exit
-Disconnected from the server.
-Server:
+## Installation & Setup
 
-arduino
-Kopyala
-Düzenle
-Server is running...
-Client connected.
-Client: Hello, Server!
-Server: Hi, Client!
-Client: How are you?
-Server: I'm good, thanks!
-Client: exit
-Client disconnected.
-Notes
-Ensure that the server is running before starting the client.
-The client and server communicate via plain text.
-The connection closes when either side sends exit.
-Enjoy chatting with this simple Java socket application! 🚀
+### Prerequisites
+- Node.js and npm installed
+- Angular CLI installed
+- Java JDK 17+ installed
+- MySQL installed and running
+- Docker (optional, for containerized deployment)
+
+### Backend Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/ozanefeozdemir/secondhand.git
+   cd secondhand/backend
+   ```
+2. Configure database connection in `application.properties`:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/secondhand_db
+   spring.datasource.username=root
+   spring.datasource.password=your_password
+   ```
+3. Build and run the application:
+   ```sh
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+### Frontend Setup
+1. Navigate to the frontend directory:
+   ```sh
+   cd secondhand/frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   ng serve
+   ```
+4. Open the application in your browser: `http://localhost:4200`
+
+## Usage
+- Sign up or log in to your account.
+- Create a new listing by uploading images and adding descriptions.
+- Browse listings and search for specific items.
+- Contact sellers to negotiate and finalize transactions.
+
+## Contributing
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For any inquiries or issues, please contact [ozanefeozdemir](https://github.com/ozanefeozdemir).
+
